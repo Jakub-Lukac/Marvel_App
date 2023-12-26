@@ -7,4 +7,7 @@
   * Implementácia shimmer effectu
   * Bloc error State (nikdy sa do neho appka nedostane neviem prečo, aj keď zadám zlú adresu API, tak aj napriek tomu sa zobrazia hrdinovia)
 
+## Praca naviac 
+  * Urobil som ešte jednu appku Star_Wars_app, ktorá je veľmi podobná tejto, jediným rozdielom je, že tam je viacero Screenov a GET requestov a taktiež event ADD, pričom nebolo potrebné
+  vykonávať autorizáciu pre API.
 
