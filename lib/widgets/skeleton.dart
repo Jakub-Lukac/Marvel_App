@@ -17,7 +17,7 @@ class _SkeletonState extends State<Skeleton>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 3),
+      duration: const Duration(seconds: 10),
     )..repeat();
 
     _colorAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(_controller);

@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:crypto/crypto.dart';
 import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
+import 'package:marvel_app/bloc/cubit/navigation_cubit.dart';
 
 import 'package:marvel_app/config/marvel_config.dart';
 import 'package:marvel_app/models/character.dart';
@@ -15,11 +16,21 @@ part 'character_state.dart';
 class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
   CharacterBloc() : super(CharactersLoading()) {
     on<LoadCharacters>(_onLoadCharacters);
+    on<onTapCharacter>(_onTapCharacter);
+  }
+
+  void _onTapCharacter(onTapCharacter event, Emitter<CharacterState> emit) {
+    emit(
+      CharacterTapped(
+        character: event.character,
+      ),
+    );
   }
 
   void _onLoadCharacters(
       LoadCharacters event, Emitter<CharacterState> emit) async {
     try {
+      await Future.delayed(const Duration(seconds: 30));
       final dio = Dio();
       const publicKey = MarvelConfig.publicKey;
       const privateKey = MarvelConfig.privateKey;

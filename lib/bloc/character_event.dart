@@ -15,3 +15,12 @@ class LoadCharacters extends CharacterEvent {
   @override
   List<Object> get props => [characters];
 }
+
+class onTapCharacter extends CharacterEvent {
+  final Character character;
+
+  const onTapCharacter({required this.character});
+
+  @override
+  List<Object> get props => [character];
+}

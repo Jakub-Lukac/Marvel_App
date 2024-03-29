@@ -26,3 +26,14 @@ final class CharacterError extends CharacterState {
   @override
   List<Object> get props => [errorMessage];
 }
+
+class CharacterTapped extends CharacterState {
+  final Character character;
+
+  const CharacterTapped({required this.character});
+
+  @override
+  List<Object> get props => [character];
+}
+
+

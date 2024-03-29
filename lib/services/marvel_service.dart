@@ -8,6 +8,8 @@ part 'marvel_service.g.dart';
 abstract class MarvelService {
   factory MarvelService(Dio dio, {String baseUrl}) = _MarvelService;
 
+  // hashovanie
+
   @GET("/characters")
   Future<Map<String, dynamic>> getCharacters(
     @Query("ts") String timestamp,
